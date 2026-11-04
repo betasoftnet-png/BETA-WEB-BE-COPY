@@ -15,7 +15,7 @@ public class ContactMessageController {
     @Autowired
     private ContactMessageRepository repository;
 
-    @PostMapping("/contact")
+    @PostMapping({"/contact", "/contacts"})
     public ResponseEntity<?> createContact(@RequestBody ContactMessage message) {
         ContactMessage saved = repository.save(message);
         return ResponseEntity.ok(saved);
